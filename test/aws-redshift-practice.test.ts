@@ -27,3 +27,23 @@ test('have redshift subnet', () => {
     },
   });
 });
+
+test('have redshift iam role', () => {
+  template.hasResource('AWS::IAM::Role', {
+    Properties: {
+      RoleName: 'undefined-undefined-redshift-role',
+    },
+  });
+});
+
+test('have redshift cluster', () => {
+  template.hasResource('AWS::Redshift::ClusterSubnetGroup', {
+    Properties: {
+      SubnetIds: [
+        {
+          Ref: 'redshiftSubnet1a',
+        },
+      ],
+    },
+  });
+});
