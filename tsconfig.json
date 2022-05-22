@@ -30,6 +30,7 @@
   "include": [
     "./bin",
     "./lib",
-    "./.eslintrc.js"
+    "./.eslintrc.js",
+    "./test"
   ]
 }
